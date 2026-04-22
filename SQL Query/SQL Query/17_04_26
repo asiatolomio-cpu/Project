@@ -1,0 +1,82 @@
+Use ScuolaDb;
+--ESERCIZIO QUIZ: Crea un Database con Tables e Records
+CREATE database AziendaDB;
+use AziendaDB;
+
+create table Reparti (
+    RepartoID INT NOT NULL Primary key Identity (1,1),
+    NomeReparto NVARCHAR(100) not null,
+    SedeReparto NVARCHAR(100) NULL
+);
+
+Create table Progetti (
+    ProgettoID INT NOT NULL Primary key identity (1,1),
+    Nome NVARCHAR (100) not null,
+    Budget DECIMAL (10,2),
+    DataInizio DATE,
+    DataFine DATE
+);
+
+/*inserisco “foreign key” per introdurre fra parentesi il nome della colonna 
+che le 2 tabelle hanno in comune, (quella in creazione e quella già creata in precedenza); 
+subito devo specificare il nome della seconda tabella, uso “reference” e tra parentesi di nuovo
+il nome della colonna che accomuna le tabelle*/
+CREATE TABLE Dipendenti(
+    DipendenteID INT NOT NULL Primary key Identity (1,1),
+    Nome NVARCHAR (100) NOT NULL,
+    Cognome NVARCHAR (100) NOT NULL,
+    Email NVARCHAR (100) UNIQUE NULL,
+    Stipendio DECIMAL (10,2),
+    DataAssunzione DATE,
+    RepartoID INT,
+    FOREIGN KEY (RepartoID) REFERENCES Reparti(RepartoID)
+);
+
+/*se voglio usare come PRIMARY KEY il nome di una colonna già esistente (e che poi sarà l'elemento in comune di 2 o più tabelle), 
+allora lo devo specificare subito prima della definizione della FOREIGN KEY, senza dimenticarmi di 
+scriverlo come se fosse una colonna ex novo senza però inserire il dettaglio della primary key*/
+/*foreign e primary keys servono per collegare fra loro più tabelle*/
+
+/*Progetti ha ProgettoID come primary key
+Dipendenti ha DipendenteID come primary key
+Assegnazioni ha 2 primary keys: DipendenteID e ProgettoID*/
+CREATE TABLE Assegnazioni(
+  DipendenteID INT,
+  ProgettoID INT,
+  Ruolo NVARCHAR (50),
+  PRIMARY KEY (DipendenteID, ProgettoID),
+  FOREIGN KEY (DipendenteID) REFERENCES Dipendenti(DipendenteID),
+  FOREIGN KEY (ProgettoID) REFERENCES Progetti(ProgettoID)
+);
+
+SELECT *
+FROM Reparti;
+SELECT *
+FROM Progetti;
+SELECT *
+FROM Dipendenti;
+SELECT *
+FROM Assegnazioni;
+
+INSERT INTO Reparti 
+(NomeReparto, SedeReparto)
+VALUES  
+('IT','USA'),
+('HR','Roma'),
+('Finance','Milano'),
+('Operation','Venezia'),
+('Marketing','Bologna'),
+('Sales','Torino'),
+('Support','Napoli'),
+('HQ','Oslo'),
+('Research','Londra'),
+('Customer','Bankok'),
+('','Bari'),
+('Management','');
+
+SELECT *
+FROM Reparti
+Where RepartoID in (1,2,5);
+
+
+  
