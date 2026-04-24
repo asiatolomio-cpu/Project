@@ -7,17 +7,6 @@ siamo dovuti andare a correggere (con alter, update e delete) */
 
 use AziendaDB;
 
-
---consegna: contare il numero totale di clienti, prima senza nome, poi con alias
-Select 
-COUNT (*)
-from Clienti;
-
-Select 
-COUNT (*) as Totale_Righe
-From Clienti;
-
-
 --aggiungiamo la colonna DettaglioID alla tabella Ordini
 ALTER TABLE Ordini
 ADD DettaglioID int;
@@ -55,6 +44,49 @@ aggiungiamo REFERENCES tabella_scelta(colonna_desiderata)*/
 alter table Ordini
 add constraint FK_Ordini_Dettagli
 foreign key (DettaglioID) references DettagliOrdine(DettaglioID);
+
+
+--consegna: contare il numero totale di clienti, prima senza nome, poi con alias
+Select 
+COUNT (*)
+from Clienti;
+
+Select 
+COUNT (*) as Totale_Righe
+From Clienti;
+
+--consegna: somma totale degli ordini, numero totale gli ordini, media, minimo e massimo
+select 
+    SUM (Totale) as 'Somma Totale degli Ordini'
+    FROM Ordini;
+
+SELECT
+    COUNT(*) AS 'Totale degli Ordini'
+    FROM Ordini;
+
+SELECT 
+    AVG(Totale) as 'Media degli Ordini'
+    from Ordini;
+
+SELECT 
+    MAX(Totale) as 'Ordine Massimo'
+    from Ordini;
+
+SELECT
+    MIN(Totale) as 'Ordine Minimo'
+
+
+--consegna: solo analisi dati
+SELECT
+    COUNT(*) AS 'Totale degli Ordini',
+    AVG(Totale) as 'Media degli Ordini',
+    MAX(Totale) as 'Ordine Massimo',
+    MIN(Totale) as 'Ordine Minimo',
+    SUM (Totale) as 'Somma Totale degli Ordini'
+    FROM Ordini;
+
+
+
 
 --consegna: calcolare gli ordini annualmente
 SELECT
