@@ -54,23 +54,20 @@ from Dipendenti;
 --GROUP BY: raggruppare colonne, righe secondo un criterio, va inserito come ultima riga di query
 --consegna: stipendio per reparto
 /* Deve restituirci:
-Nome completo dipendente
+Nome completo dipendente (unendo nome e cognome del dipendente)
 Stipendio
 Media stipendio
-Nome del reparto*/
-
-select 
-D.Nome + ' '+ D.Cognome as 'Nome Completo Dipendente',
-D.Stipendio,
-AVG (D.Stipendio) as 'Media Stipendio',
-R.Nome as 'Nome Reparto',
-R.Sede
-from Dipendenti as D
-inner join Reparti as R 
-    on R.RepartoID=D.RepartoID
-GROUP BY D.Nome, D.Cognome, AVG(D.Stipendio),D.Stipendio, R.Nome, R.Sede 
-ORDER BY R.Nome DESC
----non funziona, da correggere
-
-
+Nome del reparto
+Sede del reparto*/
+/*se non specifico nel GROUP BY gli elementi specificati nel SELECT, la query non funziona*/
+SELECT
+	d.Nome + ' ' + d.Cognome AS 'Nome completo del dipendente',
+	d.Stipendio,
+	AVG(d.Stipendio) AS 'Stipendio medio',
+	r.NomeReparto AS 'Nome del Reparto',
+	r.SedeReparto
+	FROM Dipendenti AS d
+	INNER JOIN Reparti AS r ON d.RepartoID = r.RepartoID
+	GROUP BY d.Nome, d.Cognome, d.Stipendio, r.NomeReparto, r.SedeReparto
+	ORDER BY r.NomeReparto DESC
 
