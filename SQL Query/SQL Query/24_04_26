@@ -85,9 +85,6 @@ SELECT
     SUM (Totale) as 'Somma Totale degli Ordini'
     FROM Ordini;
 
-
-
-
 --consegna: calcolare gli ordini annualmente
 SELECT
 SUM (Totale), 
@@ -95,15 +92,9 @@ o.DataOrdine
 from Ordini o
 group by o.DataOrdine;
 
-
-
-
 Select *from Clienti;
 select * from Ordini;
 select * from DettagliOrdine;
-
-
-
 
 --ho tolto le specifiche del nome completo e della sede del reparto
 SELECT
