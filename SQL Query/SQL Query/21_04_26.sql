@@ -16,6 +16,9 @@ per specificare che si tratta di una colonna;
 non è obbligatorio, ma è buona pratica inserirlo, per evitare errori*/
 exec sp_rename 'Dipendenti.Salario', 'Stipendio', 'COLUMN';
 
+--cambio nome alla tabella
+exec sp_rename 'Ordini', 'Ordine';
+
 --vado a modificare la riga
 /*con UPDATE posso sostituire tutti i valori nulli in una determinata colonna
 'SET' è il nuovo dato da inserire, nome colonna seguito da uguale e il nuovo dato 
