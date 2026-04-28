@@ -188,10 +188,5 @@ SELECT
     CONVERT(NVARCHAR,DAY(DataOrdine)) AS Giorno
 FROM Ordini;
 
---4.TUTTI LE JOIN (Left,Right,Inner,Simple)
---CONDIZIONI IF/ELSE (CASE THEN )
-
---Store Procedure
---View come viste
---Back up standard e automatizzata del database
+--continua sul file 28_04_26 Create DB
 
