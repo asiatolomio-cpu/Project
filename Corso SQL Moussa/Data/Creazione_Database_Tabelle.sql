@@ -1,4 +1,4 @@
-CREATE DATABASE ScuolaDb;
+CREATE DATABASE ScuolaDB;
 GO
 
 -- Uso del Database
