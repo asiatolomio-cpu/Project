@@ -1,0 +1,5 @@
+# sono VERO e FALSO
+
+print(5 > 3) # Vero
+print(5 < 3) # Falso
+
