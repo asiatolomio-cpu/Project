@@ -3,7 +3,7 @@
 # una lista può essere vuota o contenere elementi
 
 # Esempio 1: lista di stringhe
-# studenti = []
+# studenti = [] dichiarazione della lista vuota
 
 # Esempio 2: lista di numeri e stringhe
 studenti = ['mario', 'luca', 'simona', 'andrea', 'melania']
