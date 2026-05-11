@@ -10,7 +10,7 @@ class MiaApp:
     # Metodo costruttore
     # Viene eseguito automaticamente
     # quando creiamo l'oggetto della classe
-    def _init_(self, root):
+    def __init__(self, root):
 
         # Salviamo la finestra principale
         self.root = root
@@ -84,7 +84,7 @@ class MiaApp:
             pady=8
         )
 
-        self.bottone.pack()
+        self.bottone.pack(pady=30)
 
     # =========================================
     # METODO DELLA CLASSE

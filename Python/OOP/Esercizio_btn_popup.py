@@ -39,11 +39,11 @@ class Nuova_App:
 
         self.root.title("Benvenuto nella tua nuova app")
 
-        self.root.geometry("800x1000")
+        self.root.geometry("1800x10000")
 
         self.root.configure(bg="#f54927")
 
-        self.root.resizable(False,False)
+        self.root.resizable(True,True)
 
         self.titolo = tk.Label(
             root,
@@ -53,7 +53,7 @@ class Nuova_App:
             bg="#1447E6"
         )
 
-        self.titolo.pack(pady=45)
+        self.titolo.pack(pady=245)
 
         self.bottone = tk.Button(
             root,
@@ -74,8 +74,8 @@ class Nuova_App:
             "Ciao, benvenuto nel corso Python!"
         )
 
-    root = tk.Tk()
+root = tk.Tk()
 
-    app= Nuova_App(root)
+app= Nuova_App(root)
 
-    root.mainloop()
+root.mainloop()
