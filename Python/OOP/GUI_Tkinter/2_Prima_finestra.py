@@ -40,8 +40,12 @@ tk.Label(
     text ="Ciao, Tkinter!",
     font = ("Arial", 50, "italic"),
     bg = "#77a9ef",
-    fg = "#000000",# colore del testo
+    fg = "#000000",
+    # colore del testo
     cursor = "hand2" 
-).pack(pady=50)
+    # tipologia di cursore
+).pack(pady=50) 
+  # segnalo che il pad verticale è alto 50
 
 root.mainloop()
+# lo faccio eseguire
