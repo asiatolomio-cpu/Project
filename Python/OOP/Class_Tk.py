@@ -1,5 +1,8 @@
 import tkinter as tk
 
+# Dichiarazione del Metodo con (def)
+# Dichiarazione dell'Attributo con (self)
+# Dichiarazione del construttore della classe con (def __init__)
 
 class App:
 # creo una nuova classe chiamata App
