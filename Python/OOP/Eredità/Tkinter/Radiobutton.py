@@ -18,43 +18,57 @@ root.resizable(True, True)
 # Checkbutton — variabile collegata BooleanVar
 # le opzioni sono 'premuto' e 'non premuto'
 var_check = tk.BooleanVar()
-check = tk.Checkbutton(root, text="Accetta termini", variable=var_check)
-check.pack()
+check = tk.Checkbutton(
+    root,
+    fg="white",
+    text="Accetta termini",
+    variable=var_check,
+    background="#072E2D",
+    selectcolor="#072E2D"
+    )
+check.pack(pady=10)
+
+# dove punta di default la variabile del radiobutton
+var_radio = tk.StringVar(value="python")
 
 # creiamo una lista di Linguaggi 
-linguaggi = {"Python": "python",
-             "Java": "java",
-             "C++":"cpp",
-             "SQL":"sql server",
-             "HTML":"html",
-             "XML":"xml",
-             "GoLang":"golang",
-             "MicroPython":"micropython",
-             "Turbo Pascal":"turbopascal",
-             "Pascal":"pascal",
-             "Assembly":"assembly",
-             "MongoDB":"mongodb",
-             "Delphy":"delphy",
-             "Js":"js"}
+# selezione = list(linguaggi.keys())
+# ritorno = list(linguaggi.values())
 
-selezione = list(linguaggi.keys())
-ritorno = list(linguaggi.values())
 
 # ciclo for per recuperare chiave e valore
-
-# Radiobutton — variabile collegata StringVar
-var_radio = tk.StringVar(value="python")
-tk.Radiobutton(root, text="Python", variable=var_radio, value="python").pack()
-tk.Radiobutton(root, text="Java",   variable=var_radio, value="java").pack()
-tk.Radiobutton(root, text="C++",    variable=var_radio, value="cpp").pack()
-tk.Radiobutton(root, text="HTML",    variable=var_radio, value="html").pack()
-tk.Radiobutton(root, text="GoLang",    variable=var_radio, value="golang").pack()
-tk.Radiobutton(root, text="TurboPascal",    variable=var_radio, value="turbo").pack()
-tk.Radiobutton(root, text="MicroPython",    variable=var_radio, value="micropython").pack()
+# radiobutton con il ciclo per collegare la lista di linguaggi
+# abbiamo dichiarato che la variabile è in formato stringa
+linguaggi =["Python","python",
+             "Java", "java",
+             "Javascript", "js",
+             "C++","cpp",
+             "SQL Server","t-server",
+             "HTML","html",
+             "XML","xml",
+             "GoLang","golang",
+             "MicroPython","micropython",
+             "Turbo Pascal","turbopascal",
+             "Pascal","pascal",
+             "Assembly","assembly",
+             "MongoDB","mongodb",
+             "Delphy","delphy",
+             "Js","js"]
+for testo , valore in linguaggi:
+    tk.Radiobutton(
+        root, 
+        fg="white",
+        text=testo, 
+        value=valore,
+        background="#bdd2f0",
+        variable=var_radio, 
+        selectcolor="#072E2D").pack(anchor="w", padx=20)
 
 
 def mostra():
-    messagebox.showinfo(var_check.get(), var_radio.get())
+    messagebox.showinfo("Selezione", 
+                        f"Accetta termini:{var_check.get()}\n"
+                        f"Linguaggio scelto:{var_radio.get()}")
 
 tk.Button(root, text="Mostra selezione", command=mostra).pack(pady=10)
 root.mainloop()
