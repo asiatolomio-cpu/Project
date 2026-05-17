@@ -9,8 +9,12 @@ FILE_EXCEL = "Rubrica_Contatti.xlsx"
 # con le intestazioni già pronte
 if not os.path.exists(FILE_EXCEL):
     # crea un nuovo file Excel vuoto (nulla tra parentesi)
+    # wb = Workbook
+    # Woorkbook() segnala che cre un file excel vuoto
+    # se dovessi usarne uno già creato scriverei 'load_workbook()'
     wb = Workbook()
     # prende un foglio attivo nel nuovo file
+    # ws = Worksheet
     ws = wb.active
     # rinomina il foglio come fra ""
     ws.title = "Contatti"

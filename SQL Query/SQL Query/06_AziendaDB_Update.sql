@@ -32,9 +32,7 @@ UPDATE Dipendenti
 SET DataAssunzione = '2023-01-01'
 WHERE DataAssunzione is null;
 
-UPDATE Dipendenti
-SET Telefono = '1234567890'
-WHERE Telefono is null;
+
 
 /*posso anche aggiungere/togliere e non solo sostituire i dati
 usando gli operatori aritmetici*/
@@ -43,8 +41,7 @@ SET Stipendio = Stipendio+1000
 WHERE Stipendio <= 2000;
 
 /*voglio cancellare una colonna*/
-ALter Table Dipendenti
-DROP COLUMN Telefono;
+
 
 UPDATE Dipendenti
 SET Stipendio = Stipendio +200

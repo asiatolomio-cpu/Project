@@ -1,5 +1,5 @@
 -- Creazione del Database
-CREATE DATABASE ScuolaDb1;
+CREATE DATABASE ScuolaDb;
 
 -- Elimina il Database esistente
 -- DROP DATABASE Demo;
@@ -34,16 +34,3 @@ CREATE TABLE Studenti(
 -- VISUALIZZA LA LISTA DEGLI STUDENTI
 SELECT Nome, Cognome, Email, Genere FROM Studenti;
 
--- inserimento dei dati nella tabella studenti
-SELECT * FROM Studenti
-
-
-INSERT INTO Studenti
-	(Nome, Cognome, Genere)
-Values
-	('Melania', 'Todaro', 'F'),
-	('', '', ''),
-	('', '', ''),
-	('', '', ''),
-	('', '', ''),
-	('', '', '');

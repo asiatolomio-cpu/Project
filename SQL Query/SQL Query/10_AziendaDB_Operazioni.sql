@@ -107,3 +107,4 @@ SELECT
 	ORDER BY r.NomeReparto DESC;
 
 
+EXEC sp_rename 'Ordine', 'Ordini';

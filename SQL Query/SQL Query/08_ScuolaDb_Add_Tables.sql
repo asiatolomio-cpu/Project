@@ -10,7 +10,7 @@ FROM Studenti
 WHERE Nome = 'Mario' AND Cognome = 'Rossi';
 
 SELECT * 
-FROM Corso 
+FROM Corsi
 where NomeCorso = 'Programmazione C#' and DescrizioneCorso is null
 
 /*
@@ -46,7 +46,7 @@ SELECT
 	*
 From Studenti 
 where Nome = 'Luca' OR Nome = 'Marco'
-Order by StudentiID DESC
+Order by StudenteID DESC
 
 -- IN (1,2,3-... Più valori nella lista)  
 SELECT 
@@ -71,7 +71,7 @@ from Studenti
 
 
 select 
-	StudentiId AS Matreicola,
+	StudenteId AS Matreicola,
 	Nome + ' - ' + Cognome AS 'Nome completo degli Studenti',
 	Email,
 	CodiceFiscale AS 'Codice fiscale'
@@ -130,7 +130,7 @@ CREATE TABLE Iscrizioni(
 	IscrizioneId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 
 	-- Collegamento allo studente
-	StudentiID INT NOT NULL,
+	StudenteId INT NOT NULL,
 
 	-- Collegamento al corso
 	CorsoId INT NOT NULL,
@@ -139,10 +139,10 @@ CREATE TABLE Iscrizioni(
 	DataIscrizione Date NOT NULL,
 
 	-- Vincoli di relazioni (FOREIGN KEY)
-	FOREIGN KEY (StudentiID) REFERENCES Studenti(StudentiID),
+	FOREIGN KEY (StudenteID) REFERENCES Studenti(StudenteID),
 	--Moussa (3) -> Davide (3) 
 
-	FOREIGN KEY (CorsoId) REFERENCES Corso(CorsoId)
+	FOREIGN KEY (CorsoId) REFERENCES Corsi(CorsoId)
 );
 
 
@@ -167,7 +167,7 @@ CREATE TABLE Lezioni(
 	OraInizio TIME,
 	OraFine TIME
 
-	FOREIGN KEY (CorsoId) REFERENCES Corso(CorsoId),
+	FOREIGN KEY (CorsoId) REFERENCES Corsi(CorsoId),
 	FOREIGN KEY (AulaId)  REFERENCES Aule(AulaId)
 );
 
@@ -180,5 +180,5 @@ CREATE TABLE DocentiCorso(
 	CorsoId INT NOT NULL,
 
 	FOREIGN KEY (DocenteId) REFERENCES Docenti(DocenteId),
-	FOREIGN KEY (CorsoId) REFERENCES Corso(CorsoId)
+	FOREIGN KEY (CorsoId) REFERENCES Corsi(CorsoId)
 );

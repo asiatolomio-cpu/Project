@@ -41,3 +41,8 @@ e in automatico mi da il risultato desiderato*/
 
 --4.View come viste
 --5.Back up standard e automatizzata del database
+
+
+
+
+select * from Ordini;

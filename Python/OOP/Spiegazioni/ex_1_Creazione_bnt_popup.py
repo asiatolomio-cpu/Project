@@ -12,7 +12,7 @@ class MiaApp:
     # quando creiamo l'oggetto della classe
     def __init__(self, root):
 
-        # Salviamo la finestra principale
+        # Salviamo la finestra principale dentro l'oggetto
         self.root = root
 
         # =========================================
@@ -72,6 +72,7 @@ class MiaApp:
             text="Mostra Messaggio",
 
             # funzione collegata al click
+            # non lo inserisco con le parentesi perchè lo voglio passare, non eseguire subito
             command=self.mostra_messaggio,
 
             # stile bottone

@@ -64,7 +64,6 @@ CREATE TABLE Corso(
 );
 
 
-
 -- Inserimento di un nuovo studente
 INSERT INTO Studenti (
     Nome,           -- Nome dello studente
@@ -202,11 +201,11 @@ WHERE Nome = 'Mario';
 
 
 SELECT * FROM Studenti --Serve a visualizare il contenuto dalla tabella studenti dove l'id è uguale a 2
-	WHERE StudentiID = 2;
+	WHERE StudenteID = 2;
 
 
 SELECT Nome, Cognome, CodiceFiscale FROM Studenti --Serve a visualizare Nome Cognome e CodiceFiscale dalla tabella Studenti
-	WHERE StudentiID = 2;
+	WHERE StudenteID = 2;
 
 
 SELECT * FROM Corso;

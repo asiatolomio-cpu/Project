@@ -7,10 +7,14 @@ class Persona:
         self.cognome = cognome
         self.email = email
         self.telefono = telefono 
+        # sono variabili appartenenti all'oggetto
+        # self significa 'questo' e serve per identificare l'oggetto a cui appartiene la variabile
     
     def __str__(self):
         return f"{self.nome}, {self.cognome}, {self.email}, {self.telefono}"
     # inserisco questa stringa per rendere leggibile il risultato di ritorno di ciò che ho chiesto di fare al programma
+    # __str__ è un metodo speciale di python
+    # return da l'input di 'restituisci questo  testo' (in questo caso testo)
     
 studente = Persona("Alessio", "Pippo", "p.alessio@email.com", "3478576968")
 # è un modo per inserire i dati di uno studente, in questo caso
@@ -27,7 +31,7 @@ print(studente)
 """
 class Studenti:
     def __init__(self, nome, cognome, email,telefono):
-        # attributi o proprietà del costruttore della classe
+       
         self._nome   = nome
         self._cognome= cognome
         self._email = email

@@ -25,9 +25,6 @@ ALTER COLUMN Email NVARCHAR(150) NOT NULL;--non funziona
 ALTER TABLE Dipendenti
 ADD Telefono NVARCHAR (50);
 
-INSERT INTO Dipendenti (Nome, Cognome, Email, Stipendio, DataAssunzione, RepartoId, Telefono)
-VALUES ('Asia', 'Tolomio', 'asia.tolomio@example.com', 100000, '2023-01-01', 1, '1234567890');
-
 /*Unique non funziona con alter column*/
 --ALTER TABLE Clienti
 --ALTER COLUMN Email NVARCHAR(150) UNIQUE;-- non funziona

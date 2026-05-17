@@ -1,5 +1,6 @@
 class Studenti:
     def __init__(self):
+        # attributi o proprietà del costruttore della classe
         self._nome = ""
         self._cognome = ""
         self._email = ""
@@ -23,6 +24,7 @@ class App_Studenti:
         # inizializzo la classe App_Studenti con attributi vuoti
         studente = Studenti ()
         # imposto la variabile 'studente' come appartenente alla classe 'Studenti' definita in precedenza
+        # creo perciò un oggetto 'studente' della classe 'Studenti'
         studente.inserisci_dati()
         # faccio in modo che l'inserimento tramite input sia abbinato alla variabile 'studente'
         # quindi 'punto' su 'studente' e gli faccio fare il metodo 'inserisci_dati' definito in precedenza

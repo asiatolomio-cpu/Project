@@ -94,6 +94,7 @@ class MiaApp:
     # quando clicchiamo il bottone
     def mostra_messaggio(self):
 
+        # metodo per inserire un popup
         messagebox.showinfo(
 
             # titolo popup
